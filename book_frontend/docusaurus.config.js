@@ -8,10 +8,10 @@ const config = {
   favicon: 'img/icon2.png',
 
   // Set the production url of your site here
-  url: 'http://physical-ai-and-humaniod-robotics-book.vercel.app/', // TODO: Update with actual GitHub Pages URL
+  url: 'https://physical-ai-and-humaniod-robotics-b.vercel.app/', // TODO: Update with actual GitHub Pages URL
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages, this is usually '/<project-name>/'
-  baseUrl: '/ai-humanoid-book/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   organizationName: 'adilmalik01', // TODO: Update with your GitHub username
