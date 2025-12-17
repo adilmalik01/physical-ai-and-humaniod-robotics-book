@@ -6,7 +6,7 @@ interface Message {
   id: string;
   content: string;
   role: 'user' | 'assistant';
-  timestamp: Date;
+  timestamp: Date | string;
 }
 
 interface ChatWindowProps {
@@ -42,10 +42,23 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, isLoading, selectedTe
               )}
             >
               <div className={styles.messageContent}>
-                {message.content}
+                {message && typeof message.content === 'string' ? message.content : String(message?.content || '')}
               </div>
               <div className={styles.messageTimestamp}>
-                {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                {(() => {
+                  try {
+                    const timestamp = message.timestamp;
+                    if (timestamp instanceof Date) {
+                      return timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    } else if (typeof timestamp === 'string' || typeof timestamp === 'number') {
+                      return new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    } else {
+                      return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    }
+                  } catch (e) {
+                    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                  }
+                })()}
               </div>
             </div>
           ))

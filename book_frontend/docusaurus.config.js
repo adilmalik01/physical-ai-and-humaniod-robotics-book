@@ -5,10 +5,10 @@
 const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'Embodied Intelligence in the Real World',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon2.png',
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io', // TODO: Update with actual GitHub Pages URL
+  url: 'http://physical-ai-and-humaniod-robotics-book.vercel.app/', // TODO: Update with actual GitHub Pages URL
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages, this is usually '/<project-name>/'
   baseUrl: '/ai-humanoid-book/',
@@ -38,8 +38,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/adilmalik01/ai-humanoid-book/tree/main/',
         },
         blog: false, // Disable blog functionality
         theme: {
@@ -58,7 +56,7 @@ const config = {
         title: 'Physical AI & Humanoid Robotics',
         logo: {
           alt: 'Physical AI Logo',
-          src: 'img/logo.svg', // TODO: Add actual logo
+          src: 'img/icon2.png', // TODO: Add actual logo
         },
         items: [
           {
@@ -68,7 +66,7 @@ const config = {
             label: 'Book',
           },
           {
-            href: 'https://github.com/adilmalik01/ai-humanoid-book',
+            href: 'https://github.com/adilmalik01/physical-ai-and-humaniod-robotics-book',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/adilmalik01/ai-humanoid-book',
+                href: 'https://github.com/adilmalik01/physical-ai-and-humaniod-robotics-book',
               },
             ],
           },

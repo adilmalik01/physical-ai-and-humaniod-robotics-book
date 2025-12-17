@@ -229,9 +229,15 @@ html {
 .nav-btn:hover {
   background: #1d4ed8;
 }
+.navbar__logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .navbar__logo img{
-  width: 100px !important;
+  height: 40px;
+  width: 60px !important;
 }
 
 /* ==================== Main Content ==================== */
@@ -348,11 +354,16 @@ html {
   font-weight: 600;
   font-size: 1.125rem;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.25);
   transition: all 0.3s;
 }
 
 .btn-primary:hover {
+  text-decoration: none;
+  color: white;
+
+
   box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
   transform: scale(1.05);
 }
@@ -370,6 +381,8 @@ html {
 }
 
 .btn-secondary:hover {
+   text-decoration: none;
+  color: white;
   background: #1e293b;
 }
 

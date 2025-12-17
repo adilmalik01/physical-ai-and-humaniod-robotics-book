@@ -8,7 +8,7 @@ interface Message {
   id: string;
   content: string;
   role: 'user' | 'assistant';
-  timestamp: Date;
+  timestamp: Date | string;
 }
 
 const ChatBot: React.FC = () => {
@@ -24,7 +24,7 @@ const ChatBot: React.FC = () => {
     // Add user message to the conversation
     const userMessage: Message = {
       id: Date.now().toString(),
-      content,
+      content: typeof content === 'string' ? content : String(content || ''),
       role: 'user',
       timestamp: new Date(),
     };
@@ -63,7 +63,7 @@ const ChatBot: React.FC = () => {
       // Add assistant response to the conversation
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.response,
+        content: typeof data.response === 'string' ? data.response : String(data.response || ''),
         role: 'assistant',
         timestamp: new Date(),
       };

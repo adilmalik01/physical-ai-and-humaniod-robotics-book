@@ -38,12 +38,12 @@ export default function Home() {
                   </p>
 
                   <div className="hero-buttons">
-                    <button className="btn-primary">
+                    <Link href='/docs/introduction' className="btn-primary">
                       Begin Your Journey →
-                    </button>
-                    <button className="btn-secondary">
+                    </Link>
+                    <Link href='/docs/introduction' className="btn-secondary">
                       View Curriculum
-                    </button>
+                    </Link>
                   </div>
 
                   <div className="hero-stats">
@@ -284,12 +284,10 @@ export default function Home() {
                 Progress from fundamentals to advanced techniques at your own pace.
               </p>
               <div className="cta-buttons">
-                <button className="btn-primary btn-large">
+                <Link href='/docs/introduction' className="btn-primary btn-large">
                   Start Module 1: ROS 2 Fundamentals →
-                </button>
-                <button className="btn-secondary btn-large">
-                  Download Curriculum PDF
-                </button>
+                </Link>
+
               </div>
 
               <div className="cta-footer">
