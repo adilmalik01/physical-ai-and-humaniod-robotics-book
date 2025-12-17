@@ -1,55 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A → 1.0.0 (initial creation)
+- Modified principles: N/A (new file)
+- Added sections: All sections (new file)
+- Removed sections: N/A
+- Templates requiring updates: N/A (initial constitution)
+- Follow-up TODOs: None
+-->
+# AI-Humanoid & Physical AI Book with Integrated RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-Driven Development
+All content and features must trace back to written specifications; No implementation without corresponding spec; Every change originates from spec-first methodology.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Technical Accuracy in AI and Robotics
+All technical explanations must be based on verified AI and robotics concepts; No hallucinated references or unsupported technical claims; Strict adherence to established AI, Physical AI, and Humanoid Robotics domains.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Clarity for Mixed Audience
+Content must be accessible to AI students, developers, and hackathon evaluators; Technical concepts explained with practical examples; Clear demonstration of connection between AI software and physical robotic systems.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Reproducibility
+Book, code, and deployments must be repeatable from the repository; All processes documented and executable from scratch; Deterministic builds and deployments required.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Practical Embodiment of AI Concepts
+Bridging digital intelligence with physical systems; Real-world applications of AI concepts demonstrated; Theory connected to practice in embodied intelligence.
 
-### [PRINCIPLE_6_NAME]
+### Grounded RAG Responses
+RAG chatbot responses must be grounded strictly in book content; Selected-text question answering must reference only user-highlighted content; No hallucination in chatbot responses.
 
+## Key Standards
 
-[PRINCIPLE__DESCRIPTION]
+### Book Generation Standards
+Book structure and content must be generated using Spec-Kit Plus workflows; Claude Code must be used for spec-driven authoring and iteration; Executable and documented code examples required.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### AI Terminology Consistency
+AI terminology must be used consistently and correctly; Technical terms defined and used uniformly; Clear definitions provided for Physical AI, Embodied Intelligence, and Humanoid Robotics concepts.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Technology Stack Requirements
+Documentation framework: Docusaurus; Deployment target: GitHub Pages; Chatbot architecture using OpenAI Agents/ChatKit SDKs, FastAPI backend, Neon Serverless Postgres, and Qdrant Cloud Free Tier.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Content Scope Boundaries
+Book content scope limited to Physical AI, Embodied Intelligence, and Humanoid Robotics (simulation and real-world concepts); No expansion beyond defined scope without constitutional amendment.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+
+### Specification-First Approach
+Every feature begins with written specification; Implementation follows spec approval; Changes to spec required before implementation changes.
+
+### Code Quality Standards
+All technical explanations based on verified concepts; Executable code examples with documentation; Consistent AI terminology usage throughout.
+
+### Testing and Validation
+All chapters generated via spec-driven workflow; Embedded RAG chatbot tested for accuracy against book content; Selected-text functionality validated against user-highlighted content.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices and guides all project decisions. All implementations must comply with these principles. Amendments require formal documentation, approval process, and migration plan when applicable. All contributions must verify compliance with these principles. Complexity must be justified with clear benefits to the core mission of connecting AI software with physical robotic systems.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-16 | **Last Amended**: 2025-12-16

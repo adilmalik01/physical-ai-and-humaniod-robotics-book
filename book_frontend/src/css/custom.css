@@ -1,0 +1,893 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: small helper */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  --ifm-code-font-size: 95%;
+}
+
+/* Custom styles for cybersecurity book */
+.book-chapter {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.chapter-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: #f9fafb;
+}
+
+.objectives-section {
+  background-color: #e0f2fe;
+  border: 1px solid #7dd3fc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.lab-section {
+  border: 2px dashed #f59e0b;
+  background-color: #fefce8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.terminal {
+  background-color: #1e293b;
+  color: #f0f9ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+.terminal pre {
+  margin: 0;
+  color: #a7f3d0;
+}
+
+.terminal .command {
+  color: #f0f9ff;
+  font-weight: bold;
+}
+
+.warning-box {
+  border: 2px solid #ef4444;
+  background-color: #fee2e2;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.info-box {
+  border: 2px solid #3b82f6;
+  background-color: #dbeafe;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.security-note {
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .chapter-section {
+    padding: 0.5rem;
+  }
+}
+
+
+
+
+/* Sidebar links ko bada aur spaced-out karna */
+.theme-doc-sidebar-item-category {
+  padding: 12px 12px;
+  /* vertical aur horizontal spacing */
+  font-size: 18px;
+  /* text size bada karein */
+  line-height: 1.8;
+  /* line spacing */
+}
+
+/* Category label ko thoda aur prominent */
+.theme-doc-sidebar-item-category>a {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 12px;
+}
+
+/* Optional: hover effect ko thoda noticeable banayein */
+.theme-doc-sidebar-item-category a:hover {
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+/* ==================== Reset & Base Styles ==================== */
+
+
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617 0%, #1e3a8a 50%, #0f172a 100%);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* ==================== Navigation ==================== */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(16px);
+  z-index: 50;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-btn {
+  padding: 0.5rem 1.5rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: #1d4ed8;
+}
+
+.navbar__logo img{
+  width: 100px !important;
+}
+
+/* ==================== Main Content ==================== */
+.main-content {
+  padding-top: 5rem;
+}
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  filter: blur(100px);
+}
+
+.hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  width: fit-content;
+}
+
+.badge-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #60a5fa;
+}
+
+.badge-text {
+  color: #93c5fd;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #2563eb 0%, #9333ea 100%);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.25);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  padding: 1rem 2rem;
+  background: rgba(30, 41, 59, 0.5);
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #1e293b;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.stat-blue {
+  color: #60a5fa;
+}
+
+.stat-purple {
+  color: #a78bfa;
+}
+
+.stat-pink {
+  color: #f472b6;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* ==================== Hero Right - Floating Cards ==================== */
+.hero-right {
+  position: relative;
+}
+
+.cards-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #2563eb 0%, #9333ea 100%);
+  opacity: 0.2;
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+.cards-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-card-float {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+.feature-card-float:hover {
+  transform: scale(1.05);
+}
+
+.card-blue {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.card-blue:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.card-purple {
+  border-color: rgba(147, 51, 234, 0.3);
+}
+
+.card-purple:hover {
+  border-color: rgba(147, 51, 234, 0.5);
+  box-shadow: 0 10px 30px rgba(147, 51, 234, 0.2);
+}
+
+.card-pink {
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+.card-pink:hover {
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+}
+
+.card-offset {
+  margin-left: 2rem;
+}
+
+.card-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.icon-purple {
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+}
+
+.icon-pink {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.icon-green {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.card-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* ==================== Learn Section ==================== */
+.learn-section {
+  padding: 5rem 0;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .modules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.module-card {
+  background: rgba(30, 41, 59, 0.3);
+  backdrop-filter: blur(16px);
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.module-card:hover {
+  transform: scale(1.05);
+}
+
+.module-blue:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.module-purple:hover {
+  border-color: rgba(147, 51, 234, 0.5);
+}
+
+.module-green:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.module-pink:hover {
+  border-color: rgba(236, 72, 153, 0.5);
+}
+
+.module-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.module-card:hover .module-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.module-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.module-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.module-description {
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.module-list {
+  list-style: none;
+  font-size: 0.875rem;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ==================== Audience Section ==================== */
+.audience-section {
+  padding: 5rem 0;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .audience-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.audience-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.audience-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: scale(1.05);
+}
+
+.audience-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.audience-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #60a5fa;
+}
+
+.audience-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.audience-desc {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* ==================== Prerequisites Section ==================== */
+.prereq-section {
+  padding: 5rem 0;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.prereq-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.prereq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .prereq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.prereq-card {
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.prereq-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prereq-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+.prereq-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prereq-list li {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-icon {
+  color: #60a5fa;
+}
+
+/* ==================== CTA Section ==================== */
+.cta-section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+  filter: blur(100px);
+}
+
+.cta-container {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .cta-title {
+    font-size: 3rem;
+  }
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cta-footer {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+  border-top: 1px solid #1e293b;
+  padding: 2rem 0;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* ==================== Animations ==================== */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.feature-card-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.feature-card-float:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.feature-card-float:nth-child(3) {
+  animation-delay: 4s;
+}
+
+
+
+/* Sidebar links ko bada aur spaced-out karna */
+.theme-doc-sidebar-item-category {
+  padding: 12px 12px;
+  /* vertical aur horizontal spacing */
+  font-size: 18px;
+  /* text size bada karein */
+  line-height: 1.8;
+  /* line spacing */
+}
+
+/* Category label ko thoda aur prominent */
+.theme-doc-sidebar-item-category>a {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 12px;
+}
+
+/* Optional: hover effect ko thoda noticeable banayein */
+.theme-doc-sidebar-item-category a:hover {
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 8px;
+}
