@@ -46,7 +46,7 @@ const ChatBot: React.FC = () => {
       };
 
       // Call the backend API
-      const response = await fetch('http://localhost:8002/api/v1/chat', {
+      const response = await fetch('http://localhost:8000/api/v1/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

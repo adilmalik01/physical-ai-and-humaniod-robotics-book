@@ -10,7 +10,7 @@ import sys
 import os
 
 # Test configuration
-BASE_URL = "http://localhost:8002"  # Using port 8002 as configured
+BASE_URL = "http://localhost:8000"  # Using port 8000 as configured
 
 
 def test_health_check():
