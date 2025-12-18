@@ -16,6 +16,8 @@ const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedText, setSelectedText] = useState<string | null>(null);
+  const API_URL = process.env.BACKEND_URL;
+
 
   // Function to handle sending a message
   const handleSendMessage = async (content: string) => {
@@ -46,7 +48,7 @@ const ChatBot: React.FC = () => {
       };
 
       // Call the backend API
-      const response = await fetch('http://localhost:8000/api/v1/chat', {
+      const response = await fetch(`${API_URL}/api/v1/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
