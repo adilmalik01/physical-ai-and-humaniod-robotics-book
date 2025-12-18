@@ -8,27 +8,21 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your frontend domain
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.get("/")
-async def health_check():
+async def root():
     return {"status": "server is running"}
 
-# Include API routes
-app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
-app.include_router(documents.router, prefix="/api/v1", tags=["documents"])
-
 @app.get("/health")
-async def health_check():
+async def health():
     return {"status": "healthy"}
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
+app.include_router(documents.router, prefix="/api/v1", tags=["documents"])
